@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %} Update Record | KINGS PLACE {% endblock %}
+
+{% block content %}
+
+<div class="contain header">
+    <form method="post">
+      {% csrf_token %}
+        <div class="container">
+          <h1>Update Record</h1>
+          <hr>
+          {% if messages %}
+          {% for message in messages %}
+          {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+          <p id="message-time" class="alert alert-error float-center text-center text-dark">
+            {{ message }}
+         </p>
+          {% endif %}
+          {% endfor %}
+          {% endif %}
+          
+          {% if messages %}
+          {% for message in messages %}
+          {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+          <p id="message-time" class="alert alert-success float-center text-center text-dark">
+             {{ message }}
+          </p>
+          {% endif %}
+          {% endfor %}
+          {% endif %}
+      
+          {{ form.as_p }}
+      
+          <div class="clearfix">
+            <button type="submit" class="btn">Update Record</button>
+          </div>
+        </div>
+      </form>
+</div>
+
+{% endblock %}

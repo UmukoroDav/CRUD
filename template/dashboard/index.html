@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %} Home | KINGS PLACE {% endblock %}
+
+{% block content %}
+
+<div class="contain header">
+    <div class="">
+    <h1 class="text-white text-center pt-5">
+        KingS.....Management at it's finest
+    </h1>
+    <p class="text-center pt-3">
+        Keep track of your records effectively...
+    </p>
+    <hr>
+   <a href="{% url 'appregister' %}" class="btn">Create an Account <i class="fas fa-user-plus"></i></a>
+    </div>
+</div>
+{% endblock %}

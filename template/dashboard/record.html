@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %} View Record | KINGS PLACE {% endblock %}
+
+{% block content %}
+
+<div class="contain header">
+    <div class="">
+      <h1 class="pt-3">Customer Record:</h1>
+    <h1 class="h1 text-white text-center pt-5">
+        KingS.....Management at it's finest
+    </h1>
+    <hr>
+    <div class="card mb-5" style="background: #6c63ff;">
+        <div class="card-header"><i class="fas fa-user"></i>  {{ record.firstname }} {{ record.lastname }}</div>
+        <div class="card-body">
+            <div class="card-text">
+                <p><strong>Email</strong>: {{ record.email }}</p>
+            </div>
+            <div class="card-text">
+                <p><strong>Phone no..</strong>: {{ record.phone }}</p>
+            </div>
+            <div class="card-text">
+                <p><strong>Address</strong>: {{ record.address }}</p>
+            </div>
+            <div class="card-text">
+                <p><strong>City</strong>: {{ record.city }}</p>
+            </div>
+            <div class="card-text">
+                <p><strong>Zipcode</strong>: {{ record.zipcode }}</p>
+            </div>
+            <div class="card-text">
+                <p><strong>Created_on</strong>: {{ record.created_at }}</p>
+            </div>
+            <div class="card-text">
+                <p><strong>ID</strong>: {{ record.id }}</p>
+            </div>
+        </div>
+        <div class="card-footer" style="display: flex; gap: 10px;">
+            <a href="{% url 'apphome' %}" class="btns" style="width: 150px; background: #1f2641;">Back</a>
+            <a href="{% url 'appdelete' record.id %}" class="btns" style="width: 150px; background: #f75842;">Delete</a>
+            <a href="{% url 'appupdate' record.id %}" class="btns" style="width: 150px; background: #00bf8e;">Update</a>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock %}
